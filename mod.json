@@ -1,0 +1,70 @@
+{
+	"geode": "v5.9.0",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "yourname.input-assist",
+	"name": "Input Assist (Testing)",
+	"version": "v0.1.0",
+	"developer": "yourname",
+	"description": "Trajectory preview, click assist and auto-orb for testing sections in practice mode / editor playtest.",
+	"tags": ["gameplay", "utility"],
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"default": true,
+			"name": "Enabled"
+		},
+		"practice-only": {
+			"type": "bool",
+			"default": true,
+			"name": "Practice / playtest only",
+			"description": "Only run in practice mode or editor playtest, so normal attempts and progress are never affected. Leave this on."
+		},
+		"preview": {
+			"type": "bool",
+			"default": true,
+			"name": "Trajectory preview",
+			"description": "Green line = path if you hold now. Red line = path if you let go now. A dot marks where that path dies."
+		},
+		"preview-seconds": {
+			"type": "float",
+			"default": 0.8,
+			"min": 0.1,
+			"max": 2.0,
+			"name": "Preview length (s)",
+			"description": "Longer previews cost more CPU every frame."
+		},
+		"click-assist": {
+			"type": "bool",
+			"default": true,
+			"name": "Click assist",
+			"description": "Delays your tap by a few ms if that is what it takes to survive. It can only delay a click, never make it earlier."
+		},
+		"assist-window-ms": {
+			"type": "float",
+			"default": 40,
+			"min": 0,
+			"max": 100,
+			"name": "Assist window (ms)",
+			"description": "Max delay the assist may add to a click."
+		},
+		"assist-horizon-ms": {
+			"type": "float",
+			"default": 500,
+			"min": 100,
+			"max": 1500,
+			"name": "Assist look-ahead (ms)",
+			"description": "How far ahead a click must survive to count as good."
+		},
+		"auto-orb": {
+			"type": "bool",
+			"default": true,
+			"name": "Auto orb / ring",
+			"description": "Clicks automatically while you overlap an orb. (Pads already trigger on touch in vanilla GD.)"
+		}
+	}
+}
